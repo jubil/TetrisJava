@@ -9,18 +9,28 @@ import javax.imageio.ImageIO;
 
 public class RessourceLoader {
 
-	public static final String MOD_FOLDER = new File("mod").getAbsolutePath();
+	public static String MOD_FOLDER;
 	
 	public static BufferedImage blockTileset;
 	public static BufferedImage[] blocksCouleurs;
 	
+	public static BufferedImage backgroundImage;
+	
 	public RessourceLoader(){
+		System.out.println("RessourceLoader : START");
+		
+		//Initialisation des chemin
+		MOD_FOLDER = new File("mod").getAbsolutePath();
+		
 		//Charger la tileset des blocks
 		try {
 			blockTileset = ImageIO.read(new File(MOD_FOLDER + "/image/BlockTileset.png"));
 		} catch (IOException e) {
-			e.printStackTrace();
-			//TODO charger l'image de tileset depuis le jar (!= mod)
+			try {
+				blockTileset = ImageIO.read(RessourceLoader.class.getResourceAsStream("/image/BlockTileset.png"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		
 		//Créer les couleurs de blocks
@@ -32,9 +42,20 @@ public class RessourceLoader {
 					blocksCouleurs[i].setRGB(x, y, blockTileset.getRGB(x+(i*16), y));
 				}
 			}
-			
+		}
+
+		//Charger le background
+		try {
+			backgroundImage = ImageIO.read(new File(MOD_FOLDER + "/image/Background.png"));
+		} catch (IOException e) {
+			try {
+				backgroundImage = ImageIO.read(RessourceLoader.class.getResourceAsStream("/image/Background.png"));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		
+		System.out.println("RessourceLoader : OK");
 	}
 
 	public BufferedImage getImageCase(int indexTileset) {
