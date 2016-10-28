@@ -20,6 +20,11 @@ public enum CouleurBlock {
 	public int getSimpleColorValue() {
 		return simpleColorValue;
 	}
+	
+	//TODO Transformer un int en CouleurBlock
+	public CouleurBlock intToCouleurBlock(int i){
+		return ROUGE;
+	}
 
 	// Charge l'image correspondant à la couleur depuis le RessourceLoader
 	public BufferedImage getImageCase(RessourceLoader rl) {

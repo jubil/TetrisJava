@@ -54,8 +54,9 @@ public class RessourceLoader {
 				e1.printStackTrace();
 			}
 		}
-		
 		System.out.println("RessourceLoader : OK");
+		new BlockLoader();
+		
 	}
 
 	public BufferedImage getImageCase(int indexTileset) {
