@@ -9,6 +9,9 @@ import javax.imageio.ImageIO;
 public class Plateau {
 
 	private Case[][] cases;
+	private Piece pieceTombante;
+	private Piece pieceHold;
+	private Piece[] piecesAttente;
 	
 	private int width;
 	private int height;
