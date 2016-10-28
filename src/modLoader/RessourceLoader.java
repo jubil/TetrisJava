@@ -9,6 +9,8 @@ import javax.imageio.ImageIO;
 
 public class RessourceLoader {
 
+	private static RessourceLoader instance;
+	
 	public static String MOD_FOLDER;
 	
 	public static BufferedImage blockTileset;
@@ -54,6 +56,7 @@ public class RessourceLoader {
 				e1.printStackTrace();
 			}
 		}
+		instance = this;
 		System.out.println("RessourceLoader : OK");
 		new BlockLoader();
 		
@@ -61,6 +64,10 @@ public class RessourceLoader {
 
 	public BufferedImage getImageCase(int indexTileset) {
 		return blocksCouleurs[indexTileset];
+	}
+
+	public static RessourceLoader getInstance() {
+		return instance;
 	}
 	
 }

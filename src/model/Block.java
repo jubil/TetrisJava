@@ -2,6 +2,8 @@ package model;
 
 import java.awt.image.BufferedImage;
 
+import modLoader.RessourceLoader;
+
 public class Block {
 
 	private String nom;
@@ -54,9 +56,6 @@ public class Block {
 				ret[x][y] = rotations[sens][x][y];
 			}
 		}
-		
 		return ret;
-	}
-	
-
+	}	
 }

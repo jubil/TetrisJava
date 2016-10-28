@@ -10,6 +10,10 @@ public class Case {
 		this(false);
 	}
 	
+	public Case(CouleurBlock couleur){
+		this.couleur = couleur;
+	}
+	
 	public Case(boolean randomColor){
 		if(randomColor){
 			couleur = CouleurBlock.values()[new Random().nextInt(CouleurBlock.values().length)];
