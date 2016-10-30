@@ -56,6 +56,10 @@ public class RessourceLoader {
 				e1.printStackTrace();
 			}
 		}
+		
+		//TODO Charger les maps
+		
+		//Fin du RessourceLoader
 		instance = this;
 		System.out.println("RessourceLoader : OK");
 		new BlockLoader();
