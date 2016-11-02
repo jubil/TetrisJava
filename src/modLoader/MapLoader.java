@@ -9,11 +9,12 @@ import javax.imageio.ImageIO;
 public class MapLoader {
 	
 	private static final String MAP_FOLDER = "/map/";
-
-	private BufferedImage[] maps;
+	
+	private static MapLoader instance;
+	public static BufferedImage[] maps;
 	
 	public MapLoader(){
-		System.out.println("RessourceLoader : START");
+		System.out.println("MapLoader : START");
 		File dossierMap = new File(getClass().getClassLoader().getResource("map").getFile());
 		
 		maps = new BufferedImage[dossierMap.listFiles().length];
@@ -27,8 +28,12 @@ public class MapLoader {
 			}
 		}
 		
-		
-		System.out.println("RessourceLoader : OK");
+		instance = this;
+		System.out.println("MapLoader : OK");
+	}
+
+	public static MapLoader getInstance() {
+		return instance;
 	}
 	
 }
