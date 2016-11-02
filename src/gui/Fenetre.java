@@ -15,17 +15,10 @@ import modLoader.RessourceLoader;
 @SuppressWarnings("serial")
 public class Fenetre extends JFrame {
 
-	private final static int SCREEN_WIDTH = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getWidth();
-	private final static int SCREEN_HEIGHT = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getHeight();;
+	public final static int SCREEN_WIDTH = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getWidth();
+	public final static int SCREEN_HEIGHT = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDisplayMode().getHeight();
 	
 	private JPanel contentPane;
-	
-	public static void main(String[] args) {
-		
-		new RessourceLoader();
-		new Fenetre();
-		
-	}
 
 	public Fenetre() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,10 +54,10 @@ public class Fenetre extends JFrame {
 	} 
 
 	public void draw(){
-		//TODO
+		//TODO Génère l'image de l'état du jeu
 	}
 	
 	public void drawOnScreen(){
-		//TODO
+		//TODO Affiche l'image du jeu à la bonne taille sur la fenetre.
 	}
 }

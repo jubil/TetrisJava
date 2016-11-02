@@ -8,8 +8,7 @@ public class Piece {
 
 	private Block block;
 	int sens = 0;//de 0 à 3
-	int posX;
-	int posY;
+	int posX, posY;//position de la case en haut à gauche de la pièce sur le plateau
 	
 	public Piece(){
 		this(BlockLoader.blocks.get(new Random().nextInt(BlockLoader.blocks.size())));
